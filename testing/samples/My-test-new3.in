@@ -1,0 +1,62 @@
+#testing file checkout:
+#commit test
+> init
+<<<
++ f.txt wug.txt
++ g.txt notwug.txt
+> add g.txt
+<<<
+> add f.txt
+<<<
+> commit "adding files f and g"
+<<<
+> rm f.txt
+<<<
+> commit "Removing f.txt shouldnt be in next commit"
+<<<
++ f.txt conflict1.txt
++ g.txt conflict2.txt
++ a.txt wug.txt
++ c.txt notwug.txt
++ e.txt wug.txt
++ b.txt notwug.txt
+> add c.txt
+<<<
+> add b.txt
+<<<
+> commit "DJ Khalid"
+<<<
+> add a.txt
+<<<
+> add e.txt
+<<<
+> commit "Another one"
+<<<
+> add f.txt
+<<<
+> add g.txt
+<<<
+> commit "We the best music"
+<<<
++ f.txt conflict1.txt
+> checkout -- f.txt
+<<<
++ f.txt wug3.txt
++ g.txt wug3.txt
++ a.txt wug.txt
++ c.txt wug3.txt
++ e.txt wug3.txt
++ b.txt wug3.txt
+> checkout -- f.txt
+<<<
+> checkout -- f.txt
+<<<
+> checkout -- f.txt
+<<<
+> checkout -- f.txt
+<<<
+> checkout -- f.txt
+<<<
+> checkout -- f.txt
+<<<
+
